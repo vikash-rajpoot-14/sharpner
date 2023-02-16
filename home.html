@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sharpner</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <form class="form">
+        <p class="warn">please enter all the field</p>
+        <label for="name" class="name">Name:</label><br>
+        <input type="text" id="name" value="" class="name"><br>
+        <label for="email">Email</label><br>
+        <input type="text" id="email" value="" class="email"><br>
+        <input type="button" class="btn" value="submit">
+    </form>
+</body>
+<script>
+    console.log("viaksh")
+    const form = document.getElementsByClassName('form')[0];
+    const btn = document.querySelector('.btn');
+    const nameInput = document.querySelector('#name');
+    const emailInput = document.querySelector('#email');
+    const warn = document.querySelector('.warn');
+    warn.style.display = 'none';
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (nameInput.value == "" || emailInput.value == "") {
+            warn.style.display = 'block';
+            warn.style.background = "red";
+            form.style.background = "green";
+            return;
+        }
+
+        console.log(nameInput.value);
+        console.log(emailInput.value);
+        nameInput.value = "";
+        emailInput.value = "";
+    })
+    btn.addEventListener('mouseover', (e) => {
+        e.preventDefault();
+        btn.style.background = 'grey';
+
+    })
+    btn.addEventListener('mouseout', (e) => {
+        e.preventDefault();
+        btn.style.background = "white"
+    })
+    console.log(form)
+
+</script>
+
+</html>
